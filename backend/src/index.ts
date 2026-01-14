@@ -50,55 +50,7 @@ app.post('/api/add-ten', (req: Request, res: Response) => {
 });
 
 // Exercise 2: Style Text with Gemini API (FULL WALKTHROUGH, backend only)
-app.post('/api/style-text', async (req: Request, res: Response) => {
-  try {
-    const { text, style } = req.body;
-
-    // Validate input
-    if (!text || !style) {
-      return res.status(400).json({ error: 'Please provide both text and style' });
-    }
-
-    // Check if API key is configured
-    if (!process.env.GEMINI_API_KEY) {
-      return res.status(500).json({
-        error: 'Gemini API key not configured. Please add GEMINI_API_KEY to your .env file'
-      });
-    }
-
-    // Call Gemini API
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
-
-    const prompt = `Take the following text and rewrite it in this style: "${style}". 
-    Only return the rewritten text, nothing else.
-    
-    Original text: "${text}"`;
-
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const styledText = response.text();
-
-    res.json({
-      originalText: text,
-      style: style,
-      styledText: styledText.trim()
-    });
-  } catch (error: any) {
-    console.error('Error calling Gemini API:', error);
-    console.log('Gemini API Key configured:', !!process.env.GEMINI_API_KEY);
-
-    // Log full error details for debugging
-    if (error.response) {
-      console.error('API Response Error:', await error.response.text());
-    }
-
-    res.status(500).json({
-      error: 'Failed to style text',
-      details: error.message || 'Unknown error occurred',
-      timestamp: new Date().toISOString()
-    });
-  }
-});
+// IMPLEMENT
 
 // Start server
 app.listen(PORT, () => {
