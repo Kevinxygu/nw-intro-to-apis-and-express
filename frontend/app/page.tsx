@@ -34,7 +34,7 @@ export default function Home() {
     setLoading({ ...loading, add: true });
     try {
       // what do we write here?
-      const response = await fetch(`${API_BASE_URL}/api/add-ten`, {
+      const response = await fetch(`${API_BASE_URL}/api/IDK-I-HAVE-NO-IDEA`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export default function Home() {
   const styleText = async () => {
     setLoading({ ...loading, style: true });
     try {
-      const response = await fetch(`${API_BASE_URL}/api/NO-IDEA-AT-ALL`, {
+      const response = await fetch(`${API_BASE_URL}/api/style-text`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
