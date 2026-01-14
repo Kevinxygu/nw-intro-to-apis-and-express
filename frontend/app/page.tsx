@@ -82,7 +82,7 @@ export default function Home() {
             <a href="https://github.com/Kevinxygu/nw-intro-to-apis-and-express" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
               GitHub Link
             </a>
-            <a href="https://nwhacks.io" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+            <a href="https://nw-intro-to-apis-and-express.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
               Final Product
             </a>
           </div>
