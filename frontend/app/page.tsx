@@ -182,11 +182,6 @@ export default function Home() {
             </div>
           )}
         </div>
-
-        {/* Footer */}
-        <footer className="text-center mt-12 text-gray-500">
-          <p>Built with Next.js + Express.js | bit.ly/nw-api</p>
-        </footer>
       </div>
     </div>
   );
