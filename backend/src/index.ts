@@ -15,7 +15,7 @@ app.use(express.json());
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
-// Exercise 0: Health Check Route (WORKING)
+// Exercise 0: Health Check Route (FULLY WORKING)
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({
     status: 'healthy',
@@ -24,7 +24,9 @@ app.get('/api/health', (req: Request, res: Response) => {
   });
 });
 
-// Exercise 1: Add 10 Route (TO BE IMPLEMENTED BY STUDENTS)
+// Exercise 1: Add 10 Route
+// Here, the functionality is complete of adding 10 to a number. However, we don't have a route!
+// What should we write here?
 app.post('/api/add-ten', (req: Request, res: Response) => {
   try {
     const { number } = req.body;
@@ -47,7 +49,7 @@ app.post('/api/add-ten', (req: Request, res: Response) => {
   }
 });
 
-// Exercise 2: Style Text with Gemini API (TO BE IMPLEMENTED BY STUDENTS)
+// Exercise 2: Style Text with Gemini API (FULL WALKTHROUGH, backend only)
 app.post('/api/style-text', async (req: Request, res: Response) => {
   try {
     const { text, style } = req.body;

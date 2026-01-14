@@ -27,10 +27,13 @@ export default function Home() {
     }
   };
 
-  // Exercise 1: Add 10 Route (needs to be implemented
+  // Exercise 1: Add 10 Route
+  // Here, the functionality is complete but we're missing the API link! Let's create the
+  // API from the backend and then use it in our frontend.
   const addTen = async () => {
     setLoading({ ...loading, add: true });
     try {
+      // what do we write here?
       const response = await fetch(`${API_BASE_URL}/api/add-ten`, {
         method: 'POST',
         headers: {
@@ -47,7 +50,8 @@ export default function Home() {
     }
   };
 
-  // Exercise 2: Style Text with Gemini (full implmentation)
+  // Exercise 2: Style Text with Gemini
+  // This frontend is done! However, we'll need to make the backend route for its functionality
   const styleText = async () => {
     setLoading({ ...loading, style: true });
     try {
@@ -106,9 +110,9 @@ export default function Home() {
 
         {/* Exercise 1: Add 10 section*/}
         <div className="bg-[#151515] border border-[#333] rounded-xl p-6 mb-6 hover:border-[#444] transition-colors">
-          <h2 className="text-2xl font-semibold mb-4 text-white">Exercise 1: Add 10</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-white">Exercise 1: Add 10 (Connecting frontend to backend)</h2>
           <p className="text-gray-400 mb-4">
-            Implement the backend route to add 10 to any number!
+            Let's fill in the routes to add 10 to any number!
           </p>
           <div className="flex gap-4 mb-4">
             <input
@@ -135,9 +139,9 @@ export default function Home() {
 
         {/* Exercise 2: Style Text by calling Gemini API */}
         <div className="bg-[#151515] border border-[#333] rounded-xl p-6 hover:border-[#444] transition-colors">
-          <h2 className="text-2xl font-semibold mb-4 text-white">Exercise 2: AI Text Styler</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-white">Exercise 2: AI Text Styler (Full Walkthrough)</h2>
           <p className="text-gray-400 mb-4">
-            Let's build a wrapping project to style text using the Gemini API!
+            Let's build a wrapping project to style text using Gemini API (also an MLH prize)!
           </p>
           <div className="space-y-4">
             <div>
