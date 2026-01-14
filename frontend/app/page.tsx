@@ -55,7 +55,7 @@ export default function Home() {
   const styleText = async () => {
     setLoading({ ...loading, style: true });
     try {
-      const response = await fetch(`${API_BASE_URL}/api/style-text`, {
+      const response = await fetch(`${API_BASE_URL}/api/NO-IDEA-AT-ALL`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

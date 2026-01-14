@@ -27,7 +27,7 @@ app.get('/api/health', (req: Request, res: Response) => {
 // Exercise 1: Add 10 Route
 // Here, the functionality is complete of adding 10 to a number. However, we don't have a route!
 // What should we write here?
-app.post('/api/add-ten', (req: Request, res: Response) => {
+app.post('/api/IDK-SOMETHING-HERE', (req: Request, res: Response) => {
   try {
     const { number } = req.body;
 
