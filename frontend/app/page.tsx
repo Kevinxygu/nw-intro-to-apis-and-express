@@ -82,8 +82,11 @@ export default function Home() {
             <a href="https://github.com/Kevinxygu/nw-intro-to-apis-and-express" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
               GitHub Link
             </a>
-            <a href="https://nwhacks.io" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+            <a href="https://nw-intro-to-apis-and-express.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
               Final Product
+            </a>
+            <a href="https://docs.google.com/presentation/d/1hhdUEuPB_aFxLxAzum1_ZdOtqrZ4f53L7wPgKEZQ31A/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+              Slide Deck
             </a>
           </div>
         </nav>
