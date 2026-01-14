@@ -36,11 +36,26 @@ cd ..
 echo.
 echo ✅ Setup complete!
 echo.
-echo 📝 Next steps:
-echo    1. Add your Gemini API key to backend\.env
-echo    2. Run 'npm run dev' in the backend directory
-echo    3. Run 'npm run dev' in the frontend directory (new terminal)
-echo    4. Open http://localhost:3000 in your browser
+echo 📝 Starting development servers...
+echo    Backend: http://localhost:3001
+echo    Frontend: http://localhost:3000
+echo.
+echo ⚠️  Make sure to add your Gemini API key to backend\.env
+echo    Get your key at: https://aistudio.google.com/api-keys
 echo.
 echo 🎉 Happy coding!
-pause
+echo.
+
+REM Start backend in new window
+start "Backend Server" cmd /k "cd backend && npm run dev"
+
+REM Wait a moment for backend to start
+timeout /t 3 /nobreak >nul
+
+REM Start frontend in new window
+start "Frontend Server" cmd /k "cd frontend && npm run dev"
+
+echo.
+echo ✅ Servers started in separate windows!
+echo    Press any key to exit this window...
+pause >nul

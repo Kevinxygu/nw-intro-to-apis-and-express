@@ -27,7 +27,7 @@ export default function Home() {
     }
   };
 
-  // Exercise 1: Add 10 Route (To be implemented)
+  // Exercise 1: Add 10 Route (needs to be implemented
   const addTen = async () => {
     setLoading({ ...loading, add: true });
     try {
@@ -47,7 +47,7 @@ export default function Home() {
     }
   };
 
-  // Exercise 2: Style Text with Gemini (To be implemented)
+  // Exercise 2: Style Text with Gemini (full implmentation)
   const styleText = async () => {
     setLoading({ ...loading, style: true });
     try {
@@ -71,40 +71,43 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-200 via-orange-200 to-yellow-200 p-8">
+    <div className="min-h-screen bg-[#151515] p-8">
       <div className="max-w-4xl mx-auto">
-        <header className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <h1 className="text-5xl font-bold text-gray-800">Intro to APIs & Express</h1>
-            <span className="text-4xl">N</span>
+        <nav className="fixed top-0 left-0 right-0 bg-[#151515] border-b border-[#333] z-50">
+          <div className="max-w-4xl mx-auto px-8 py-4 flex justify-end gap-6">
+            <a href="https://github.com/Kevinxygu/nw-intro-to-apis-and-express" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+              GitHub Link
+            </a>
+            <a href="https://nwhacks.io" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 transition-colors">
+              Final Product
+            </a>
           </div>
-          <p className="text-gray-600 text-lg">nwPlus Workshop</p>
-        </header>
+        </nav>
 
         {/* Exercise 0: Health Check */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">Exercise 0: Health Check ✅</h2>
-          <p className="text-gray-600 mb-4">
+        <div className="bg-[#151515] border border-[#333] rounded-xl p-6 mb-6 mt-24 hover:border-[#444] transition-colors">
+          <h2 className="text-2xl font-semibold mb-4 text-white">Exercise 0: Health Check</h2>
+          <p className="text-gray-400 mb-4">
             This route is already working! Click the button to check if the backend is running.
           </p>
           <button
             onClick={checkHealth}
             disabled={loading.health}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="bg-white text-black font-medium py-2 px-6 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
           >
             {loading.health ? 'Checking...' : 'Check Health'}
           </button>
           {healthStatus && (
-            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-              <p className="text-green-800">{healthStatus}</p>
+            <div className="mt-4 p-4 bg-[#0a3d0a] border border-[#1a5c1a] rounded-lg">
+              <p className="text-green-400">{healthStatus}</p>
             </div>
           )}
         </div>
 
-        {/* Exercise 1: Add 10 */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">Exercise 1: Add 10 🔢</h2>
-          <p className="text-gray-600 mb-4">
+        {/* Exercise 1: Add 10 section*/}
+        <div className="bg-[#151515] border border-[#333] rounded-xl p-6 mb-6 hover:border-[#444] transition-colors">
+          <h2 className="text-2xl font-semibold mb-4 text-white">Exercise 1: Add 10</h2>
+          <p className="text-gray-400 mb-4">
             Implement the backend route to add 10 to any number!
           </p>
           <div className="flex gap-4 mb-4">
@@ -113,43 +116,43 @@ export default function Home() {
               value={numberInput}
               onChange={(e) => setNumberInput(e.target.value)}
               placeholder="Enter a number"
-              className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+              className="flex-1 p-3 bg-[#0a0a0a] border border-[#333] rounded-lg focus:outline-none focus:border-white text-white placeholder-gray-500 transition-colors"
             />
             <button
               onClick={addTen}
               disabled={loading.add || !numberInput}
-              className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="bg-white text-black font-medium py-2 px-6 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
             >
               {loading.add ? 'Adding...' : 'Add 10'}
             </button>
           </div>
           {addResult && (
-            <div className="mt-4 p-4 bg-purple-50 border border-purple-200 rounded-lg">
-              <p className="text-purple-800 font-semibold">{addResult}</p>
+            <div className="mt-4 p-4 bg-[#1a1a2e] border border-[#2a2a4e] rounded-lg">
+              <p className="text-blue-400 font-medium">{addResult}</p>
             </div>
           )}
         </div>
 
-        {/* Exercise 2: Style Text with AI */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">Exercise 2: AI Text Styler 🎨</h2>
-          <p className="text-gray-600 mb-4">
-            Use the Gemini API to transform text into different styles!
+        {/* Exercise 2: Style Text by calling Gemini API */}
+        <div className="bg-[#151515] border border-[#333] rounded-xl p-6 hover:border-[#444] transition-colors">
+          <h2 className="text-2xl font-semibold mb-4 text-white">Exercise 2: AI Text Styler</h2>
+          <p className="text-gray-400 mb-4">
+            Let's build a wrapping project to style text using the Gemini API!
           </p>
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Text to transform:
               </label>
               <textarea
                 value={textInput}
                 onChange={(e) => setTextInput(e.target.value)}
                 placeholder="e.g., Hello friends, I am here"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800 min-h-[80px]"
+                className="w-full p-3 bg-[#0a0a0a] border border-[#333] rounded-lg focus:outline-none focus:border-white text-white placeholder-gray-500 min-h-[80px] transition-colors"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Style to apply:
               </label>
               <input
@@ -157,27 +160,27 @@ export default function Home() {
                 value={styleInput}
                 onChange={(e) => setStyleInput(e.target.value)}
                 placeholder="e.g., say it like a pirate"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800"
+                className="w-full p-3 bg-[#0a0a0a] border border-[#333] rounded-lg focus:outline-none focus:border-white text-white placeholder-gray-500 transition-colors"
               />
             </div>
             <button
               onClick={styleText}
               disabled={loading.style || !textInput || !styleInput}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-full bg-white text-black font-medium py-3 px-6 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
             >
               {loading.style ? 'Styling...' : 'Transform Text'}
             </button>
           </div>
           {styledResult && (
-            <div className="mt-6 p-6 bg-orange-50 border border-orange-200 rounded-lg">
-              <p className="text-sm font-medium text-gray-600 mb-2">Styled Result:</p>
-              <p className="text-orange-900 text-lg">{styledResult}</p>
+            <div className="mt-6 p-6 bg-[#1a1a2e] border border-[#2a2a4e] rounded-lg">
+              <p className="text-sm font-medium text-gray-400 mb-2">Styled Result:</p>
+              <p className="text-white text-lg">{styledResult}</p>
             </div>
           )}
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-12 text-gray-600">
+        <footer className="text-center mt-12 text-gray-500">
           <p>Built with Next.js + Express.js | bit.ly/nw-api</p>
         </footer>
       </div>
