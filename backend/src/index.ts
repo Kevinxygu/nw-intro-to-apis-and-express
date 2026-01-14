@@ -52,6 +52,7 @@ app.post('/api/add-ten', (req: Request, res: Response) => {
 // Exercise 2: Style Text with Gemini API (FULL WALKTHROUGH, backend only)
 app.post('/api/style-text', async (req: Request, res: Response) => {
   try {
+    // get the text and style from the request body
     const { text, style } = req.body;
 
     // Validate input
@@ -69,15 +70,18 @@ app.post('/api/style-text', async (req: Request, res: Response) => {
     // Call Gemini API
     const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
+    // Include a prompt for the model
     const prompt = `Take the following text and rewrite it in this style: "${style}". 
     Only return the rewritten text, nothing else.
     
     Original text: "${text}"`;
 
+    // Call the API itself
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const styledText = response.text();
 
+    // send the API response back
     res.json({
       originalText: text,
       style: style,
