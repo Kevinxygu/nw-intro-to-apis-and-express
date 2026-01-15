@@ -66,6 +66,9 @@ docker-compose up --build
 
 Visit `http://localhost:3000` to see the app!
 
+### Option 3: Run the batch files
+You can run ./setup.sh in the root folder (Mac) or ./setup.bat if you're Windows
+
 ## 🔑 Getting API Keys
 
 ### Gemini API Key (Exercise 2)
